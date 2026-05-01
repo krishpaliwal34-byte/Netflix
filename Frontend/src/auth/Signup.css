@@ -1,0 +1,70 @@
+.form-container {
+  margin-top: 30px;
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+              url("https://assets.nflxext.com/ffe/siteui/vlv3/9c7e0a3f-9c77-4d63-8c5d-3a0d2f6c5f6b/8c3e1f6d-7c2f-4b4e-aad0-1f4c5e1e3a2a/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container form {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 8px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container h2 {
+  position: absolute;
+  top: 9%;
+ 
+  color: white;
+  font-size: 2rem;
+}
+
+.form-container input {
+  margin-bottom: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-container input::placeholder {
+  color: #aaa;
+}
+
+.form-container span {
+  color: #e50914;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.form-container button {
+  background: #e50914;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-container button:hover {
+  background: #f6121d;
+}
+
+.form-container p {
+  color: #bbb;
+  font-size: 13px;
+  margin-top: 15px;
+  text-align: center;
+}
