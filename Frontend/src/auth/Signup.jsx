@@ -1,16 +1,31 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
-import {Link}  from 'react-router-dom'
+import axios from 'axios'
+import {data, Link,useNavigate}  from 'react-router-dom'
 import './Signup.css'
 const Signup = () => {
+      const navigate= useNavigate();
      const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm()
-  const onSubmit = (data) => {
-  console.log(data);
+  const onSubmit = async(data) => {
+     if(data.password !== data.cpassword){
+    alert("Password not same")
+     }
+   const res = await axios.post(
+    "http://localhost:4900/api/auth/signup",
+    {
+      name: data.name,
+      email:data.email,
+      password: data.password,
+    }
+   )
+   alert("Signup Successfully")
+   navigate("/login")
+   
 };
   return (
     <>

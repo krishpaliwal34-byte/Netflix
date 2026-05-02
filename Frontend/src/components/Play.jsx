@@ -16,8 +16,11 @@ const Play = () => {
    <>
   <div className="play-container">
   
-  <div className="hero">
-    <img src={movie.Poster || movie.Image} alt={movie.name} />
+ <div 
+  className="hero"
+  style={{ backgroundImage: `url(${movie.Poster || movie.Image})` }}
+>
+    <img className="mobile-img"src={movie.Image} alt={movie.name} />
 
     <div className="overlay"></div>
 

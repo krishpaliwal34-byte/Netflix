@@ -80,6 +80,53 @@
     gap: 24px;
     justify-content: space-between;
 }
+.name-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* right side */
+  justify-content: center;
+  gap: 5px;
+  margin-right: 20px;
+  text-align: right;
+}
+
+/* Welcome text */
+.name-nav h2 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Name highlight */
+.name-nav h2 span {
+  color: #e50914; /* Netflix red */
+  font-weight: 600;
+}
+
+/* Logout button */
+.name-nav button {
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.name-nav button:hover {
+  background: #e50914;
+}
+
+/* Click effect */
+.name-nav button:active {
+  transform: scale(0.95);
+}
+
+
 @media (max-width: 868px) {
     .navbar {
         height: 65px;
@@ -95,6 +142,21 @@
         padding: 6px 12px;
         font-size: 12px;
     }
+     .name-nav {
+    align-items: flex-start;   /* left align */
+    text-align: left;
+    margin: 10px;
+  }
+
+  .name-nav h2 {
+    font-size: 1rem;
+  }
+
+  .name-nav button {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.85rem;
+  }
 }
 @media (max-width: 660px) {
     .navbar a{
@@ -121,12 +183,22 @@
     .mobile-menu a{
        font-size: 16px;
        border-bottom: 1px solid #333;
-
+    }
+    .mobile-menu button{
+     padding: 3x 3px;
+     border-radius: 20px;
+     background-color: red;
+    }
+    .mobile-menu button:hover{
+        background-color: white;
     }
     .navbar input{
         width: 80%;
         padding: 5px;
         font-size: 13px;
+    }
+    .name-nav button{
+        display: none;
     }
 }
 

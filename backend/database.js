@@ -3,7 +3,7 @@ const connectDB = async () => {
   try{
     await mongoose.connect("mongodb://localhost:27017/netflix")
     console.log("Database is connect")
-  }catch{
+  }catch(err){
     console.log("Database is not connect")
   }
 }

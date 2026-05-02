@@ -7,17 +7,16 @@
 
 /* Hero section */
 .hero {
-  position: relative;
   height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-/* Background image */
-.hero img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+
+.mobile-img {
+  display: none;
 }
 
 /* Dark gradient overlay */
@@ -106,17 +105,18 @@
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
-  /* Hero height thoda kam */
-  .hero {
+   .hero {
+    background-image: none !important;
     height: 70vh;
   }
 
-  /* Image adjust */
-  .hero img {
+  /* Image dikhao */
+  .mobile-img {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top; /* face cut na ho */
+    height: 100vh;
+    object-fit: contain; /* pura image dikhe */
+     object-position: 50% 24%;
   }
 
   /* Overlay thoda soft */
