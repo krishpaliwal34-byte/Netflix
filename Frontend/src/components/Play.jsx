@@ -12,6 +12,8 @@ const Play = () => {
     return <h2 style={{color:"white"}}>No movie selected</h2>;
   }
 
+  
+
   return (
    <>
   <div className="play-container">

@@ -7,18 +7,20 @@ import Home from './components/Home.jsx'
 import Play from './components/Play.jsx'
 import TvShows from './components/TvShows.jsx'
 import './App.css'
+import { useState } from 'react'
 
 function App() {
+  const [search , setsearch] = useState("");
   return (
     <>
       <BrowserRouter>
-        <Navbar/>
+        <Navbar setsearch={setsearch}/>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='movies' element={<Movies/>} />
-          <Route path='/tvshows' element={<TvShows/>} />
+          <Route path='movies' element={<Movies search={search}/>} />
+          <Route path='/tvshows' element={<TvShows search={search}/>} />
           <Route path='/play' element={<Play/>} />
         </Routes>
       </BrowserRouter>

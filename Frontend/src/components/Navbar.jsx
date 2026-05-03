@@ -3,7 +3,7 @@ import './Navbar.css'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 import axios from 'axios'
 
-const Navbar = () => {
+const Navbar = ({setsearch}) => {
   const [Openmenu, setOpenmenu] = useState(false)
   const [name , setname] = useState("");
   const location = useLocation()
@@ -75,7 +75,7 @@ const Navbar = () => {
                 <Link to="/tvshows">TV Shows</Link>
               </div>
 
-            <input placeholder="Search On Netflix..." type="text" />
+            <input placeholder="Search On Netflix..." type="text" onChange={(e)=> setsearch(e.target.value)} />
 
             <div className="fav">
               <i className="ri-heart-line"></i>

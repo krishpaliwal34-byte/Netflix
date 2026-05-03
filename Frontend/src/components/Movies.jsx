@@ -179,12 +179,37 @@ const TopPicks = [
   },
  ]
 
-const Movies = () => {
+const Movies = ({search}) => {
   const navigate = useNavigate();
+
+  const MoviesList = [
+  ...TopPicks,
+  ...PopularMovies,
+  ...BollywoodMovies,
+  ...EpicsMovies,
+]
+
+const filterMovies = MoviesList.filter((movie) => 
+ movie.name.toLowerCase().includes(search.toLowerCase())
+)
   return (
     <>
   
-    <div className="movies-section">
+   { search ? (
+     <div className="movies-section">
+      <h2>Search Result</h2>
+      <div className="movies-row">
+        {filterMovies.map((Tmovie) => (
+          <div className="movie-card" key={Tmovie.id} onClick={() => navigate('/play', { state: Tmovie })}>
+            <img src={Tmovie.Image} alt={Tmovie.name} />
+            <h4>{Tmovie.name}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+   ):(
+    <>
+     <div className="movies-section">
       <h2>Top Picks On Netflix</h2>
       <div className="movies-row">
         {TopPicks.map((Tmovie) => (
@@ -196,7 +221,7 @@ const Movies = () => {
       </div>
     </div>
 
-     <div className="movies-section2">
+    <div className="movies-section2">
       <h2>Popular films on Netflix</h2>
       <div className="movies-row">
         {PopularMovies.map((Pmovie) => (
@@ -231,6 +256,11 @@ const Movies = () => {
         ))}
       </div>
     </div>
+    </>
+   )
+
+   }
+
 
     </>
   )

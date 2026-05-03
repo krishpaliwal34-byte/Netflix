@@ -181,11 +181,35 @@ const GoogleTreanding = [
          Poster: "",
     },
 ]
-const TvShows = () => {
+const TvShows = ({search}) => {
+  const tvshowslist = [
+    ...AnimatedShows,
+    ...MurderShows,
+    ...RealityShows,
+    ...GoogleTreanding
+  ]
+ const filtertv = tvshowslist.filter((tvshow) => 
+ tvshow.name.toLowerCase().includes(search.toLowerCase())
+)
+
   const navigate = useNavigate();
   return (
     <>
-      <div className="movies-section">
+     { search ? (
+       <div className="movies-section">
+      <h2>Search Results</h2>
+      <div className="movies-row">
+        {filtertv.map((Animated) => (
+         <div className="movie-card" key={Animated.id} onClick={() => navigate('/play', { state: Animated })}>
+            <img src={Animated.Image} alt={Animated.name} />
+            <h4>{Animated.name}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+     ): (
+      <>
+         <div className="movies-section">
       <h2>Animated shows on Netflix</h2>
       <div className="movies-row">
         {AnimatedShows.map((Animated) => (
@@ -197,7 +221,7 @@ const TvShows = () => {
       </div>
     </div>
 
-    <div className="movies-section2">
+         <div className="movies-section2">
       <h2>Murder shows on Netflix</h2>
       <div className="movies-row">
         {MurderShows.map((Murder) => (
@@ -232,6 +256,11 @@ const TvShows = () => {
         ))}
       </div>
     </div>
+    </>
+     )
+
+     }
+
 
 
     </>
